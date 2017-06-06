@@ -275,6 +275,9 @@ class juniper_vpn(object):
         if ret == 2:
             self.cj.clear(self.args.host, '/', 'DSID')
             self.r = self.br.open(self.r.geturl())
+        else:
+            self.cj.clear(self.args.host, '/', 'DSID')
+            self.r = self.br.open('https://' + self.args.host)
 
 def cleanup():
     os.killpg(0, signal.SIGTERM)
